@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为IUserDao接口方法提供sql语句配置 -->
+<mapper namespace="com.alibaba.dao.IEmpDao">
+    <resultMap id="BaseResultMap" type="com.alibaba.model.Emp">
+    <id column="EMPNO" jdbcType="INTEGER" property="empno" />
+    <result column="ENAME" jdbcType="VARCHAR" property="ename" />
+    <result column="JOB" jdbcType="VARCHAR" property="job" />
+    <result column="MGR" jdbcType="INTEGER" property="mgr" />
+    <result column="HIREDATE" jdbcType="DATE" property="hiredate" />
+    <result column="SAL" jdbcType="DOUBLE" property="sal" />
+    <result column="COMM" jdbcType="DOUBLE" property="comm" />
+    <result column="DEPTNO" jdbcType="INTEGER" property="deptno" />
+    </resultMap>
+    <select id="selectEmp" resultMap="BaseResultMap" parameterType="long">
+        SELECT * FROM EMP WHERE EMPNO = #{id}
+    </select>
+
+</mapper>
