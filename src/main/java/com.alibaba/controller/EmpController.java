@@ -23,5 +23,6 @@ public class EmpController {
         mv.addObject("emp", emp);
         mv.setViewName("emp");
         return mv;
+        /*test*/
     }
 }
